@@ -24,8 +24,8 @@ export default async function handler(req, res) {
     // 농림축산식품부 API (유기동물)
     if (source === 'animal') {
       const ANIMAL_API_KEY = 'ac2d1b8ee2454fc8d0aa41feb603d0505b2beedde7ce0662d3e3d8a8ee25b3c6';
-      // ✅ 정확한 경로: abandonmentPublicService_v2
-      apiUrl = `https://apis.data.go.kr/1543061/abandonmentPublicService_v2/abandonmentPublic_v2?serviceKey=${ANIMAL_API_KEY}&pageNo=${start}&numOfRows=${end}&_type=json`;
+      // ✅ 서울시만 조회 (upr_cd=6110000)
+      apiUrl = `https://apis.data.go.kr/1543061/abandonmentPublicService_v2/abandonmentPublic_v2?serviceKey=${ANIMAL_API_KEY}&upr_cd=6110000&pageNo=${start}&numOfRows=${end}&_type=json`;
       
       console.log('📡 Fetching Animal API:', apiUrl);
     } 
